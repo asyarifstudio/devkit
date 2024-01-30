@@ -10,9 +10,9 @@
     {#each tlvs as tlv}
 
     {#if tlv.pc == TAG_PC.PRIMITIVE}
-    <li class="ml-5">{tlv.tag} {tlv.length} {tlv.value}</li>
+    <li class="ml-5 hover:bg-base-200 p-1 rounded hover:font-semibold">{tlv.tag} {tlv.length} {tlv.value}</li>
     {:else}
-    <li class="ml-5">{tlv.tag} {tlv.length}</li>
+    <li class="ml-5 hover:bg-base-200 p-1 rounded hover:font-semibold">{tlv.tag} {tlv.length}</li>
     <li class="ml-5">
         <svelte:self tlvs={tlv.value} level={level+1}></svelte:self>
     </li>

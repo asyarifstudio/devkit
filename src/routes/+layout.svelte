@@ -6,15 +6,15 @@
     <div class="flex-none overflow-y-auto min-h-full">
         <ul class="menu bg-base-200 w-56 h-full">
             <li>
-              <h2 class="menu-title">TLV</h2>
+              <h2 class="menu-title">Parser</h2>
               <ul>
-                <li><a href="/tlv/parser">TLV Parser</a></li>
+                <li><a href="/parser/tlv">BER TLV Parser</a></li>
               </ul>
             </li>
             <li>
-              <h2 class="menu-title">ASCII</h2>
+              <h2 class="menu-title">Converter</h2>
               <ul>
-                <li><a href="/ascii/converter">ASCII HEX Converter</a></li>
+                <li><a href="/converter/ascii">ASCII Converter</a></li>
               </ul>
             </li>
             
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Input -->
-    <div class="flex-grow">
+    <div class="flex-grow p-5">
         <slot></slot>
     </div>
 

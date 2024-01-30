@@ -11,6 +11,13 @@
                 <li><a href="/tlv/parser">TLV Parser</a></li>
               </ul>
             </li>
+            <li>
+              <h2 class="menu-title">ASCII</h2>
+              <ul>
+                <li><a href="/ascii/converter">ASCII HEX Converter</a></li>
+              </ul>
+            </li>
+            
           </ul>
     </div>
 

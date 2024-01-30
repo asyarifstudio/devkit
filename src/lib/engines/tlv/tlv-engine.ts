@@ -1,17 +1,7 @@
+import { EngineUtils } from "../engine-utils";
 import { TAG_CLASS, TAG_PC, type TLV } from "./tlv";
 
-/**
- * check if input contains only hexadecimal value
- * @param input 
- */
-function checkInputHex(input:string):boolean{
-    const hexPattern = /^[0-9A-Fa-f]+$/;
-    return hexPattern.test(input);
-}
 
-function checkInputLength(input:string):boolean{
-    return input.length %2 == 0;
-}
 
 function parseSingleTag(input:string,level:number):TLV {
       //manage the tag
@@ -105,11 +95,11 @@ export const TLVEngine = {
     parse:(input:string):TLV[] => {
         var root:TLV[]  = [] ;
 
-        if(!checkInputHex(input)){
+        if(!EngineUtils.isStringValidHexString(input)){
             throw Error("Invalid Hexadecimal Input")
         }
 
-        if(!checkInputLength(input)){
+        if(!EngineUtils.isStringLengthEven(input)){
             throw Error("Invalid Hexadecimal Input Length")
         }
 

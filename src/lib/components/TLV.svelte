@@ -6,17 +6,19 @@
 
     $:console.log(level)
 </script>
-
-<ul class:menu={level == 0}>
+<ul>
     {#each tlvs as tlv}
-    <li>
-        {#if tlv.pc == TAG_PC.PRIMITIVE}
-        <a>{tlv.tag} {tlv.length} {tlv.value}</a>
-        {:else}
-        <a>{tlv.tag} {tlv.length}</a>
+
+    {#if tlv.pc == TAG_PC.PRIMITIVE}
+    <li class="ml-5">{tlv.tag} {tlv.length} {tlv.value}</li>
+    {:else}
+    <li class="ml-5">{tlv.tag} {tlv.length}</li>
+    <li class="ml-5">
         <svelte:self tlvs={tlv.value} level={level+1}></svelte:self>
-        {/if}
     </li>
+    {/if}
     {/each}
 </ul>
+
+
 

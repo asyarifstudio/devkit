@@ -16,5 +16,10 @@ export interface TLV {
     pc:TAG_PC;
     length:string;
     actualLength:number;
-    value:string | TLV ;
+    value:string | TLV[] ;
+    /**
+     * total length in hexadecimal
+     * for example TLV 5C0101 -> 3
+     */
+    totalLength:number;
 }

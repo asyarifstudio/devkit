@@ -1,18 +1,19 @@
 <script lang="ts">
-	import type { TLV } from "$lib/engines/tlv/tlv";
+	import Tlv from "$lib/components/TLV.svelte";
+import type { TLV } from "$lib/engines/tlv/tlv";
 	import { TLVEngine } from "$lib/engines/tlv/tlv-engine";
 
-    var input:string = ""
-    var tlv:TLV | undefined = undefined;
+    var input:string = "BF3728BF2721800100BF2F0A800100810204F00C0130060100A20CA00A4F0500000000000401005F370100"
+    var tlvs:TLV[]= [];
     var error:string = ""
 
     $: {
         try{
             error = ""
-            tlv = TLVEngine.parse(input);
+            tlvs = TLVEngine.parse(input);
         }
         catch(e:any){
-            tlv = undefined;
+            tlvs = [];
             error = e.message
         }
         
@@ -23,15 +24,10 @@
     <textarea class="textarea textarea-bordered" placeholder="TLV Hexadecimal String" bind:value={input}></textarea>
 </div>
 <div>
-    {#if tlv}
-    <ul class="menu">
-        <li>
-            <a>{tlv.tag} {tlv.length}</a>
-            <ul>
-                <li><a>{tlv.value}</a></li>
-            </ul>
-        </li>
-    </ul>
+    {#if error.length==0}
+    <Tlv tlvs={tlvs} level={0}></Tlv>
+    {:else}
+    <div>{error}</div>
     {/if}
     
 </div>

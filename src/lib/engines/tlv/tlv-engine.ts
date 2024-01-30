@@ -66,7 +66,8 @@ function parseSingleTag(input:string,level:number):TLV {
         actualLength:lengthPartInt,
         length:lengthPartStr,
         totalLength,
-        value
+        value,
+        expanded:true
     }
 
 }
@@ -94,6 +95,8 @@ export const TLVEngine = {
 
     parse:(input:string):TLV[] => {
         var root:TLV[]  = [] ;
+
+        if(!input || input.length == 0) return root;
 
         if(!EngineUtils.isStringValidHexString(input)){
             throw Error("Invalid Hexadecimal Input")

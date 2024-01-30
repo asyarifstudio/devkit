@@ -3,7 +3,7 @@
 import type { TLV } from "$lib/engines/tlv/tlv";
 	import { TLVEngine } from "$lib/engines/tlv/tlv-engine";
 
-    var input:string = "BF3728BF2721800100BF2F0A800100810204F00C0130060100A20CA00A4F0500000000000401005F370100"
+    var input:string = ""
     var tlvs:TLV[]= [];
     var error:string | undefined = undefined
 

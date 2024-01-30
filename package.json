@@ -18,6 +18,7 @@
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"autoprefixer": "^10.4.17",
 		"daisyui": "^4.6.1",
+		"lucide-svelte": "^0.319.0",
 		"postcss": "^8.4.33",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",

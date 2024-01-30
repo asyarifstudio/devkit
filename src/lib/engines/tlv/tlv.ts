@@ -16,6 +16,7 @@ export interface TLV {
     pc:TAG_PC;
     length:string;
     actualLength:number;
+    expanded:boolean,
     value:string | TLV[] ;
     /**
      * total length in hexadecimal

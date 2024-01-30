@@ -4,9 +4,13 @@ import { TAG_PC, type TLV } from "./tlv";
  * check if input contains only hexadecimal value
  * @param input 
  */
-function checkInput(input:string):boolean{
-    const hexPattern = /^[0-9A-Fa-f]*[0-9A-Fa-f]$/;
+function checkInputHex(input:string):boolean{
+    const hexPattern = /^[0-9A-Fa-f]+$/;
     return hexPattern.test(input);
+}
+
+function checkInputLength(input:string):boolean{
+    return input.length %2 == 0;
 }
 
 
@@ -51,12 +55,9 @@ function doParsing(input:string):TLV {
     input = input.slice(lengthPartStr.length);
 
 
-    var value:TLV | string;
+    var value:TLV | string = input.slice(0,lengthPartInt * 2);
     if(tagPC == TAG_PC.CONSTRUCTED){
-        value = doParsing(input)
-    }
-    else{
-        value = input;
+        value = doParsing(value)
     }
 
     return {
@@ -79,8 +80,12 @@ export const TLVEngine = {
     parse:(input:string):TLV | undefined => {
         var root:TLV | undefined = undefined ;
 
-        if(!checkInput(input)){
+        if(!checkInputHex(input)){
             throw Error("Invalid Hexadecimal Input")
+        }
+
+        if(!checkInputLength(input)){
+            throw Error("Invalid Hexadecimal Input Length")
         }
 
         root = doParsing(input)

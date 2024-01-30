@@ -20,14 +20,16 @@ import type { TLV } from "$lib/engines/tlv/tlv";
     }
 
 </script>
-<div>
-    <textarea class="textarea textarea-bordered" placeholder="TLV Hexadecimal String" bind:value={input}></textarea>
-</div>
-<div>
-    {#if error.length==0}
-    <Tlv tlvs={tlvs} level={0}></Tlv>
-    {:else}
-    <div>{error}</div>
-    {/if}
-    
+<div class="grid grid-cols-2">
+    <div>
+        <textarea class="textarea textarea-bordered roundednon w-full h-full" placeholder="TLV Hexadecimal String" bind:value={input}></textarea>
+    </div>
+    <div>
+        {#if error.length==0}
+        <Tlv tlvs={tlvs} level={0}></Tlv>
+        {:else}
+        <div>{error}</div>
+        {/if}
+        
+    </div>
 </div>

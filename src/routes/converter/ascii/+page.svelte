@@ -40,7 +40,7 @@
                 <span class="label-text">Hex String Input</span>
                 
               </div>
-            <textarea class="textarea textarea-bordered roundednon w-full h-full"  bind:value={inputHex}></textarea>
+            <textarea class="textarea textarea-bordered  w-full h-full"  bind:value={inputHex}></textarea>
             <div class="label">
                 <span class="label-text-alt text-error" class:text-white={!errorHex}>{errorHex}</span>
                 

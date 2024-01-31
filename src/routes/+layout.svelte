@@ -13,6 +13,7 @@
               <h2 class="menu-title">Parser</h2>
               <ul>
                 <li><a href="/parser/tlv">BER TLV Parser</a></li>
+                <li><a href="/parser/certificate">X.509 Certificate</a></li>
               </ul>
             </li>
             <li>

@@ -1,5 +1,5 @@
 
-import * as forge from 'node-forge';
+import * as jsrsasign from 'jsrsasign';
 
 export enum X509_FORMAT {
     DER="DER",
@@ -8,17 +8,17 @@ export enum X509_FORMAT {
 }
 
 
+export type Certificate = jsrsasign.X509
 
 
 export const x509Engine = {
-    parse:(input:string,format:X509_FORMAT):forge.pki.Certificate=>{
-        var cert;
-        var publicKey;
+    parse:(input:string,format:X509_FORMAT):jsrsasign.X509=>{
+        var cert = new jsrsasign.X509();
         switch(format){
             case X509_FORMAT.DER:
                 break;
             case X509_FORMAT.PEM:
-                cert = forge.pki.certificateFromPem(input);
+                cert.readCertPEM(input)
                 break;
             case X509_FORMAT.BASE64:
                 break

@@ -29,7 +29,7 @@ import type { TLV } from "$lib/engines/tlv/tlv";
             <div class="label">
                 <span class="label-text">TLV Hex string</span>
               </div>
-            <textarea class="textarea textarea-bordered w-full h-full" placeholder="TLV Hexadecimal String" bind:value={input}></textarea>
+            <textarea class="textarea textarea-bordered w-full h-full"  bind:value={input}></textarea>
             <div class="label">
                 {#if error}
                 <span class="label-text-alt text-error">{error}</span>

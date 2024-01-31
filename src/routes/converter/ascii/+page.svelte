@@ -37,13 +37,14 @@
     <div>
         <label class="form-control w-full">
             <div class="label">
-              <span class="label-text">Hex String Input</span>
-              {#if errorHex}
-              <span class="label-text-alt text-error">{errorHex}</span>
-              {/if}
-              
-            </div>
+                <span class="label-text">Hex String Input</span>
+                
+              </div>
             <textarea class="textarea textarea-bordered roundednon w-full h-full" placeholder="Hex Input" bind:value={inputHex}></textarea>
+            <div class="label">
+                <span class="label-text-alt text-error" class:text-white={!errorHex}>{errorHex}</span>
+                
+              </div>
         </label>
         
         <label class="form-control w-full">
@@ -61,13 +62,13 @@
     <div>
         <label class="form-control w-full">
             <div class="label">
-              <span class="label-text">ASCII Input</span>
-              {#if errorAscii}
-              <span class="label-text-alt text-error">{errorAscii}</span>
-              {/if}
-              
-            </div>
+                <span class="label-text">ASCII Input</span>
+              </div>
             <textarea class="textarea textarea-bordered roundednon w-full h-full" placeholder="Hex Input" bind:value={inputAscii}></textarea>
+            <div class="label">
+                <span class="label-text-alt text-error" class:text-white={!errorAscii}>{errorAscii}</span>
+                
+              </div>
         </label>
         
         <label class="form-control w-full">

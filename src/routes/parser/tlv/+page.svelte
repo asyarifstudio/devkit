@@ -27,23 +27,22 @@ import type { TLV } from "$lib/engines/tlv/tlv";
     <div>
         <label class="form-control w-full">
             <div class="label">
-              <span class="label-text">TLV Hex string</span>
-              {#if error}
-              <span class="label-text-alt text-error">{error}</span>
-              {/if}
-              
-            </div>
+                <span class="label-text">TLV Hex string</span>
+              </div>
             <textarea class="textarea textarea-bordered w-full h-full" placeholder="TLV Hexadecimal String" bind:value={input}></textarea>
-          </label>
+            <div class="label">
+                {#if error}
+                <span class="label-text-alt text-error">{error}</span>
+                {/if}
+                
+              </div>
+        </label>
         
     </div>
     <div>
         <label class="form-control w-full">
             <div class="label">
               <span class="label-text">TLV Structure</span>
-              {#if error}
-              <span class="label-text-alt text-error">{error}</span>
-              {/if}
             </div>
             {#if !error}
             <div class="rounded-md border p-2 text-sm">
